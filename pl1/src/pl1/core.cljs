@@ -1,5 +1,7 @@
 (ns pl1.core
-  (:require [clojure.browser.repl :as repl])
+  (:require [clojure.browser.repl :as repl]
+             [pl1.helper :as h])
+  (:require-macros [pl1.macros :as m])
   )
 
 ;; (defonce conn
@@ -15,7 +17,7 @@
                              :top 100
                              :fill "blue"
                              :width 20
-                             :height 20
+                             :height (m/fo (h/foo 30))
                              :angle 45 })
 
         rect (js/fabric.Rect. rectConfig)]
