@@ -17,13 +17,14 @@
                              :top 100
                              :fill "blue"
                              :width 20
-                             :height (m/fo (h/foo 30))
+                             :height (h/foo 30)
                              :angle 45 })
 
         rect (js/fabric.Rect. rectConfig)]
     (do
+      (aset cnv "selection" false)
       (.add cnv rect)
       (.renderAll cnv)
-      (.log js/console rectConfig))))
+      (m/consoleLog rectConfig))))
 
 (.addEventListener js/window "load" -main)

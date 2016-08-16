@@ -1,3 +1,4 @@
 (ns pl1.macros)
 
-(defmacro fo [x] `(+ 1 ~x))
+(defmacro consoleLog [x]
+  `(.log js/console ~x))
